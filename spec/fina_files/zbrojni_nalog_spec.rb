@@ -1,6 +1,5 @@
 #encoding:utf-8
 require 'fina_files/zbrojni_nalog'
-require 'fina_files/doprinosi'
 
 describe ZbrojniNalog do
   NALOZI = [
@@ -31,7 +30,7 @@ describe ZbrojniNalog do
   it 'stavlja red 301' do
     subject.datum = DateTime.parse('2012-07-25')
     subject.nalozi = NALOZI
-    subject.rows[1].should ==  "#{Doprinosi.IBAN_platitelj}HRK" + " "*24 + "00002" + "00000000000000076613" + "20120725" + " "*916 + "301"
+    subject.rows[1].should ==  "#{ZbrojniNalog::IBAN_platitelj}HRK" + " "*24 + "00002" + "00000000000000076613" + "20120725" + " "*916 + "301"
     subject.rows[1].length.should ==  1000
   end
 
