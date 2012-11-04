@@ -2,13 +2,13 @@ require 'bigdecimal'
 
 class ZbrojniNalog
   attr_accessor :datum, :nalozi
-  attr_reader :rows
-  IBAN_platitelj = 'HR1111111111111111111'
+  attr_reader :rows, :iban_platitelj
 
-  def initialize
+  def initialize(iban_platitelj)
     @rows = []
     @nalozi = []
     @datum = DateTime.now
+    @iban_platitelj = iban_platitelj
   end
 
   def rows
@@ -23,7 +23,7 @@ class ZbrojniNalog
   end
 
   def row_301
-    "#{IBAN_platitelj}HRK" + " "*24 +  "%05d" % nalozi.count + zbroj_to_s + datum.strftime('%Y%m%d') + " "*916 + "301"
+    "#{@iban_platitelj}HRK" + " "*24 +  "%05d" % nalozi.count + zbroj_to_s + datum.strftime('%Y%m%d') + " "*916 + "301"
   end
 
   def row_309(nalog)

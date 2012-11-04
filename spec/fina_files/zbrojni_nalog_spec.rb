@@ -19,7 +19,10 @@ describe ZbrojniNalog do
               ]
            ]
 
-  #201206111701                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         300
+  let(:subject) do
+    ZbrojniNalog.new('HR1111111111111111111')
+  end
+
   it 'stavlja red 300' do
     subject.datum = DateTime.parse('2012-07-25')
     subject.nalozi = NALOZI
@@ -30,7 +33,7 @@ describe ZbrojniNalog do
   it 'stavlja red 301' do
     subject.datum = DateTime.parse('2012-07-25')
     subject.nalozi = NALOZI
-    subject.rows[1].should ==  "#{ZbrojniNalog::IBAN_platitelj}HRK" + " "*24 + "00002" + "00000000000000076613" + "20120725" + " "*916 + "301"
+    subject.rows[1].should ==  "#{subject.iban_platitelj}HRK" + " "*24 + "00002" + "00000000000000076613" + "20120725" + " "*916 + "301"
     subject.rows[1].length.should ==  1000
   end
 
