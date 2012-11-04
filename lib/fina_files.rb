@@ -1,5 +1,3 @@
 require "fina_files/version"
-
-module FinaFiles
-  # Your code goes here...
-end
+require "fina_files/fina_izvadak"
+require "fina_files/zbrojni_nalog"
