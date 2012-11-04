@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["kresimir.bojcic@gmail.com"]
   gem.description   = %q{FINA formati na jednom mjestu}
   gem.summary       = %q{Podrska za rad sa fina datotekama}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/drKreso/fina_files"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
