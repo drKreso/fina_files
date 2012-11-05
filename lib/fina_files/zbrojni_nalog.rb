@@ -41,4 +41,10 @@ class ZbrojniNalog
   def row_399
     " "*997 + "399"
   end
+
+  def export(file_name)
+    File.open(File.expand_path(file_name), 'w:Windows-1250') do |file|
+     rows.each { |row| file.write(row + "\r\n") }
+   end
+  end
 end

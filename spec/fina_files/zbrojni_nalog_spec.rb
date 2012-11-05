@@ -60,3 +60,4 @@ describe ZbrojniNalog do
   end
 
 end
+
