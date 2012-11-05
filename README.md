@@ -9,44 +9,39 @@ Radi se o novom formatu koji je aktualan od 4. lipnja 2012 (Novi univerzalni HUB
 
 ##  Instalacija
 
-Treba dodati redak u Gemfile
-
-    gem 'fina_files'
-
-I nakon toga izvrsiti:
-
-    $ bundle
-
-Ako se ne koristi u Rails aplikaciji dovoljno je samo instalirati ovako:
-
     $ gem install fina_files
 
-## Zbrojni nalog
+## Zbrojni nalog za doprinose
+
+Podese se osnovni podaci
+
+```ruby
+Doprinosi.configure do
+    {
+      :oib_platitelja => '58914703561',
+      :mio_i => 574.60,
+      :mio_ii => 191.53,
+      :zdravstveno_osiguranje => 497.98,
+      :ozljede_na_radu => 19.15,
+      :zaposljavanje => 65.12,
+      :place =>
+        [
+          { :oib => 58914703561, :prima => 'Kresimir Bojcic', :racun => '2484004-3235123152', :iznos => 3064.52 }
+        ]
+    }
+end
+```
+
+I nakon toga se moze generirati zbrojni nalog
 
 ```ruby
 ZbrojniNalog.new("HR3624840081111111111").tap do |result|
-  result.nalozi = NALOZI  #ovo je array naloga sa osnovnim podacima
+  result.nalozi = Doprinosi.nalozi
   result.export('~/Desktop/doprinosi.hub3')
 end
 ```
 
-```ruby
- NALOZI = [
-              [
-                "HR68 8109-58914703561-1209",
-                "MIO I STUP",
-                "1001005-1863000160",
-                "DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE",
-                574.6
-              ],
-              [
-                "HR68 2003-58914703561-1209",
-                "MIO II STUP",
-                "1001005-1700036001",
-                "DOPRINOS ZA MIROVINSKO OSIGURANJE",
-                191.53
-              ]
-           ]
-```
+* Garancija je - AS IS - molim da svi provjere naloge prije autorizacije jer ne mogu preuzeti odgovornost za moguce propuste.
+
 
 
