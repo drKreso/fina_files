@@ -27,6 +27,7 @@ require "fina_files"
 # Podese se osnovni podaci
 Doprinosi.configure do
     {
+      :pdv => 100.00, #opcionalno
       :oib_platitelja => '58914703561',
       :mio_i => 574.60,
       :mio_ii => 191.53,
