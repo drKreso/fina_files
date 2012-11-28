@@ -28,7 +28,7 @@ class Doprinosi
       end
     end
     unless postavke[:pdv].nil?
-      result << [ "HR68 1201-#{postavke[:oib_platitelja]}","PDV #{godina_mjesec}",'1001005-1863000160','DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE', postavke[:pdv]],
+      result << [ "HR68 1201-#{postavke[:oib_platitelja]}","PDV #{godina_mjesec}",'1001005-1863000160','DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE', postavke[:pdv]]
     end
     result
  end
