@@ -36,7 +36,7 @@ Doprinosi.configure do
       :zaposljavanje => 65.12,
       :place =>
         [
-          { :oib => 58914703561, :prima => 'Krešimir Bojčić', :racun => '2484004-3235123152', :iznos => 3064.52 }
+          { :prima => 'Krešimir Bojčić', :racun => '2484004-3235123152', :iznos => 3064.52 }
         ]
     }
 end
