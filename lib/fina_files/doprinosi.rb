@@ -22,6 +22,11 @@ class Doprinosi
     [ "HR68 8559-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'Doprinos za ozljede na radu','1001005-1863000160','DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE', postavke[:ozljede_na_radu] ],
     [ "HR68 8702-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'Doprinos za zaposljavanje','1001005-1863000160','DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE', postavke[:zaposljavanje]],
    ]
+    #broj racuna je za grad Zagreb
+    unless postavke[:porez_prirez_dohodak].nil?
+      result << [ "HR68 1406-#{postavke[:oib_platitelja]}","Porez prirez dohodak #{godina_mjesec}",'1001005-1713312009','Grad Zagreb', postavke[:porez_prirez_dohodak]]
+    end
+
     unless postavke[:place].nil?
       postavke[:place].each do |placa|
         result << [ "HR67 #{postavke[:oib_platitelja]}-#{godina_mjesec}-0",'Isplata place',"#{placa[:racun]}","#{placa[:prima]}", placa[:iznos] ]

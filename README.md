@@ -19,7 +19,7 @@ Ogledni primjer:
 
 
 ```ruby
-# !/usr/bin/env ruby 
+# !/usr/bin/env ruby
 # encoding: UTF-8
 
 require "fina_files"
@@ -34,6 +34,7 @@ Doprinosi.configure do
       :zdravstveno_osiguranje => 497.98,
       :ozljede_na_radu => 19.15,
       :zaposljavanje => 65.12,
+      :porez_prirez_dohodak => 50.00, #opcionalno, racun je za grad Zagreb
       :place =>
         [
           { :prima => 'Krešimir Bojčić', :racun => '2484004-3235123152', :iznos => 3064.52 }
@@ -62,4 +63,10 @@ Ovo nije točan podatak ako je firma tek otvorena jer se u biti gleda redni broj
 * Garancija je - "AS IS" - molim da svi provjere naloge prije autorizacije jer ne mogu preuzeti odgovornost za moguće propuste.
 
 
+Verzije
+-------
+
+0.0.8
+
+Dodano placanje poreza i prireza na dohodak (grad Zagreb)
 
