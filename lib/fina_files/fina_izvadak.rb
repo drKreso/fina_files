@@ -1,4 +1,5 @@
 #HUB3 verzija specifikacije
+require 'date'
 class FinaIzvadak
   DEFINICIJA= {
     "900" => 'a7a50a11a4a8a917a3',
