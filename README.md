@@ -20,7 +20,8 @@ Ogledni primjer:
 
 ```ruby
 # !/usr/bin/env ruby
-# encoding: UTF-8
+#encoding:Windows-1250
+
 
 require "fina_files"
 
