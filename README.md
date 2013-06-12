@@ -13,7 +13,7 @@ Radi se o novom formatu koji je aktualan od 4. lipnja 2012 (Novi univerzalni HUB
 
 ## Zbrojni nalog za doprinose
 
-Ovo je za napaćeni radni narod koji nema volje/živaca svaki mjesec raditi knjiženja našoj dragoj državnoj upravi (umjesto da ima mogućnost platiti jedan iznos).
+Ovo je za napaćeni radni narod koji nema volje/živaca svaki mjesec raditi ručno knjiženja državnoj upravi.
 
 Ogledni primjer:
 
