@@ -33,7 +33,7 @@ class Doprinosi
 
     unless postavke[:place].nil?
       postavke[:place].each do |placa|
-        result << [ "HR67 #{postavke[:oib_platitelja]}-#{godina_mjesec}-0",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
+        result << [ "HR67 #{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
       end
     end
     unless postavke[:pdv].nil?

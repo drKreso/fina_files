@@ -52,14 +52,9 @@ end
 # Ogledni primjer za prošli mjesec u ~/Desktop/doprinosi.hub3 datoteci.
 ```
 
-Za broj "mjeseca" koji treba kod naloga koji se generiraju uzima se prošli mjesec. Dakle ako 1.11.2012 radimo naloge poziv na broj za MIO I stup je:
-
 ```ruby
-"HR68 8109-#{postavke[:oib_platitelja]}-#{godina_mjesec}" #=> "HR68 8109-58914703561-1210"
+"HR68 8109-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}" #=> "HR68 8109-58914703561-1210"
 ```
-
-Ovo nije točan podatak ako je firma tek otvorena jer se u biti gleda redni broj doprinosa, a ne mjesec. Kada firma radi punu godinu onda je taj redni broj jednak broju mjeseca. Ako nekome treba može se dodati postavka :korekcija_mjeseca.
-
 
 Lako je dodati recimo isplatu place za vise ljudi:
 
@@ -109,7 +104,7 @@ Verzije
 
 Dodano placanje poreza i prireza na dohodak (grad Zagreb)
 
-0.1.0
+0.1.1
 
 Izmjena poziva na broj za doprinose, ne koristi se format YYMM nego YYDDD gdje je dan redni broj dana u godini
 
