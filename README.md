@@ -109,3 +109,7 @@ Verzije
 
 Dodano placanje poreza i prireza na dohodak (grad Zagreb)
 
+0.1.0
+
+Izmjena poziva na broj za doprinose, ne koristi se format YYMM nego YYDDD gdje je dan redni broj dana u godini
+

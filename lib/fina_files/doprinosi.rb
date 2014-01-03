@@ -14,13 +14,17 @@ class Doprinosi
     (DateTime.now << 1).strftime('%y%m')
   end
 
+  def self.poziv_na_broj_godina_dan
+    (DateTime.now).strftime('%y') << ( "%03d" % DateTime.now.day )
+  end
+
   def self.nalozi
    result = [
-    [ "HR68 8109-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'MIO I STUP',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:mio_i] ],
-    [ "HR68 2003-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'MIO II STUP',get_iban('1001005-1700036001'),'DOPRINOS ZA MIROVINSKO OSIGURANJE', postavke[:mio_ii] ],
-    [ "HR68 8400-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'Doprinos za osnovno zdravstveno osiguranja',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:zdravstveno_osiguranje] ],
-    [ "HR68 8559-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'Doprinos za ozljede na radu',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:ozljede_na_radu] ],
-    [ "HR68 8702-#{postavke[:oib_platitelja]}-#{godina_mjesec}",'Doprinos za zaposljavanje',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:zaposljavanje]],
+    [ "HR68 8109-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}",'MIO I STUP',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:mio_i] ],
+    [ "HR68 2003-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}",'MIO II STUP',get_iban('1001005-1700036001'),'DOPRINOS ZA MIROVINSKO OSIGURANJE', postavke[:mio_ii] ],
+    [ "HR68 8400-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}",'Doprinos za osnovno zdravstveno osiguranja',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:zdravstveno_osiguranje] ],
+    [ "HR68 8559-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}",'Doprinos za ozljede na radu',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:ozljede_na_radu] ],
+    [ "HR68 8702-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}",'Doprinos za zaposljavanje',get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:zaposljavanje]],
    ]
     #broj racuna je za grad Zagreb
     unless postavke[:porez_prirez_dohodak].nil?
