@@ -83,7 +83,7 @@ ZbrojniNalog.new("HR3624840081105230796").tap do |result|
 
   if !avans_dobiti.nil? && avans_dobiti > 0
     result.nalozi << [ "HR99", "Avans dobiti", Doprinosi.get_iban("2484008-55555555555"), "Marko Jurjevac", avans_dobiti ]
-    result.nalozi << [ "HR681570-OIB", "Porez i prirez na kapitalnu dobit", Doprinosi.get_iban("1001005-1713312009"), "POREZ I PRIREZ NA DOHODAK", porez_na_kapitalnu]
+    result.nalozi << [ "HR681910-OIB", "Porez i prirez na kapitalnu dobit", Doprinosi.get_iban("1001005-1713312009"), "POREZ I PRIREZ NA DOHODAK", porez_na_kapitalnu]
   end
 
   result.nalozi << [ "HR99",'Najam poslovnog prostora', Doprinosi.get_iban("2340009-3555555146"),"Ante Markovic", 5530.0 ]
