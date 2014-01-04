@@ -28,7 +28,7 @@ class Doprinosi
    ]
     #broj racuna je za grad Zagreb
     unless postavke[:porez_prirez_dohodak].nil?
-      result << [ "HR68 1406-#{postavke[:oib_platitelja]}","Porez prirez dohodak #{godina_mjesec}",get_iban('1001005-1713312009'),'Grad Zagreb', postavke[:porez_prirez_dohodak]]
+      result << [ "HR68 1880-#{postavke[:oib_platitelja]}","Porez prirez dohodak #{godina_mjesec}",get_iban('1001005-1713312009'),'Grad Zagreb', postavke[:porez_prirez_dohodak]]
     end
 
     unless postavke[:place].nil?
