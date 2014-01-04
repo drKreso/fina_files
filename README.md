@@ -53,7 +53,7 @@ end
 ```
 
 ```ruby
-"HR68 8109-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}" #=> "HR68 8109-58914703561-1210"
+"HR68 8168-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}" #=> "HR68 8168-58914703561-1210"
 ```
 
 Lako je dodati recimo isplatu place za vise ljudi:
@@ -113,17 +113,20 @@ Izmjena poziva na broj za doprinose, ne koristi se format YYMM nego YYDDD gdje j
 
 Novi pozivi na broj
 
-8109 --> 8168
-2003 --> 2283
-8400 --> 8486
-8559 --> 8630
-8702 --> 8753
-1813 --> 1945
-1570 --> 1910
-
+```ruby
+  8109 --> 8168
+  2003 --> 2283
+  8400 --> 8486
+  8559 --> 8630
+  8702 --> 8753
+  1813 --> 1945
+  1570 --> 1910
+```
 
 0.1.3
 
 Doprinosi na placu - poziv na broj/popravak
 
-1406 --> 1880
+```ruby
+  1406 --> 1880
+```
