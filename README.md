@@ -109,3 +109,16 @@ Dodano placanje poreza i prireza na dohodak (grad Zagreb)
 
 Izmjena poziva na broj za doprinose, ne koristi se format YYMM nego YYDDD gdje je dan redni broj dana u godini
 
+0.1.2
+
+Novi pozivi na broj
+
+1406 --> 1880
+8109 --> 8168
+2003 --> 2283
+8400 --> 8486
+8559 --> 8630
+8702 --> 8753
+1813 --> 1945
+1570 --> 1910
+
