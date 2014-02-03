@@ -15,7 +15,7 @@ class Doprinosi
   end
 
   def self.poziv_na_broj_godina_dan
-    (DateTime.now).strftime('%y') << ( "%03d" % DateTime.now.day )
+    (DateTime.now).strftime('%y') << ( "%03d" % DateTime.now.yday )
   end
 
   def self.nalozi
