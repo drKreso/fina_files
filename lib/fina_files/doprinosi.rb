@@ -28,12 +28,12 @@ class Doprinosi
    ]
     #broj racuna je za grad Zagreb
     unless postavke[:porez_prirez_dohodak].nil?
-      result << [ "HR68 1880-#{postavke[:oib_platitelja]}","Porez prirez dohodak #{godina_mjesec}",get_iban('1001005-1713312009'),'Grad Zagreb', postavke[:porez_prirez_dohodak]]
+      result << [ "HR68 1880-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}","Porez prirez dohodak #{godina_mjesec}",get_iban('1001005-1713312009'),'Grad Zagreb', postavke[:porez_prirez_dohodak]]
     end
 
     unless postavke[:place].nil?
       postavke[:place].each do |placa|
-        result << [ "HR67 #{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
+        result << [ "HR01 #{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
       end
     end
     unless postavke[:pdv].nil?

@@ -130,3 +130,7 @@ Doprinosi na placu - poziv na broj/popravak
 ```ruby
   1406 --> 1880
 ```
+
+0.1.5
+  na 1880 isto ide dan/godina na kraju
+  place idu na poziv HR01, a ne na HR67 kao do sada
