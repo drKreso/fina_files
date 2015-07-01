@@ -31,14 +31,21 @@ class Doprinosi
       result << [ "HR68 1880-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}","Porez prirez dohodak #{godina_mjesec}",get_iban('1001005-1713312009'),'Grad Zagreb', postavke[:porez_prirez_dohodak]]
     end
 
+    #broj racuna je za grad Donju Stubicu
+    unless postavke[:porez_prirez_dohodak_donja_stubica].nil?
+      result << [ "HR68 1880-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}","Porez prirez dohodak #{godina_mjesec}", "HR8710010051707912009", 'Donja Stubica', postavke[:porez_prirez_dohodak_donja_stubica]]
+    end
+
     unless postavke[:place].nil?
       postavke[:place].each do |placa|
-        result << [ "HR01 #{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
+        result << [ "HR67 #{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
       end
     end
     unless postavke[:pdv].nil?
       result << [ "HR68 1201-#{postavke[:oib_platitelja]}","PDV #{godina_mjesec}",get_iban('1001005-1863000160'),'DRZAVNI PRORACUN REPUBLIKE HRVATSKE', postavke[:pdv]]
     end
+
+
     result
  end
 
