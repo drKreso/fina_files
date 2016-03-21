@@ -18,3 +18,4 @@ tmp
 fina_files.sublime-project
 fina_files.sublime-workspace
 *.swp
+.un~
