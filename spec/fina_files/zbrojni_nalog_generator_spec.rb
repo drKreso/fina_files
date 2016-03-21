@@ -1,7 +1,7 @@
 #encoding:utf-8
-require 'fina_files/zbrojni_nalog'
+require 'fina_files/zbrojni_nalog_generator'
 
-describe ZbrojniNalog do
+describe ZbrojniNalogGenerator do
   NALOZI = [
               [
                 "HR68 8109-58914703561-1209",
@@ -20,7 +20,7 @@ describe ZbrojniNalog do
            ]
 
   let(:subject) do
-    ZbrojniNalog.new('HR1111111111111111111')
+    ZbrojniNalogGenerator.new('HR1111111111111111111')
   end
 
   it 'stavlja red 300' do
@@ -60,4 +60,3 @@ describe ZbrojniNalog do
   end
 
 end
-

@@ -1,6 +1,6 @@
 require 'bigdecimal'
 
-class ZbrojniNalog
+class ZbrojniNalogGenerator
   attr_accessor :datum, :nalozi
   attr_reader :rows, :iban_platitelj
 
