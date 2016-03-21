@@ -45,7 +45,7 @@ end
 
 
 # nakon toga se može generirati zbrojni nalog za željeni broj računa:
-ZbrojniNalog.new("HR3624840081111111111").tap do |result|
+ZbrojniNalogGenerator.new("HR3624840081111111111").tap do |result|
   result.nalozi = Doprinosi.nalozi
   result.export(~/Desktop/doprinosi.hub3)
 end
@@ -75,7 +75,7 @@ Lako je dodati dodatne uplate koje se ponavljaju mjesecno, recimo
 
 
 ```ruby
-ZbrojniNalog.new("HR3624840081105230796").tap do |result|
+ZbrojniNalogGenerator.new("HR3624840081105230796").tap do |result|
   result.nalozi = Doprinosi.nalozi #generiraju se stavke za doprinose
 
   avans_dobiti = 1_000.0
