@@ -44,7 +44,10 @@ class ZbrojniNalogGenerator
 
   def export(file_name)
     File.open(File.expand_path(file_name), 'w:Windows-1250') do |file|
-     rows.each { |row| file.write(row + "\r\n") }
+     rows.each do |row|
+       encoded = (row + "\r\n").force_encoding("Windows-1250")
+       file.write(encoded)
+     end
    end
   end
 end
