@@ -134,3 +134,7 @@ Doprinosi na placu - poziv na broj/popravak
 0.1.5
   na 1880 isto ide dan/godina na kraju
   place idu na poziv HR01, a ne na HR67 kao do sada
+
+0.2.0
+  Novi poziv na broj - isplata redovne place
+  HR69 40002-OIB-100
