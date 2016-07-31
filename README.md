@@ -144,5 +144,5 @@ Doprinosi na placu - poziv na broj/popravak
   Novi poziv na broj odobrenja za isplatu place
   HR67 OIB-JJOPD-0
 
-0.2.3
+0.2.2
   Dodan poziv na broj odobrenja(platitelja) kao prvi podatak naloga
