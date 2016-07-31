@@ -66,4 +66,9 @@ describe ZbrojniNalogGenerator do
     subject.rows[-1].length.should == 1000
   end
 
+  it 'iznos mora biti tocan' do
+    subject.nalozi = NALOZI
+    subject.zbroj_to_s.should == "00000000000000076613"
+  end
+
 end

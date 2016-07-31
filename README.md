@@ -146,3 +146,6 @@ Doprinosi na placu - poziv na broj/popravak
 
 0.2.2
   Dodan poziv na broj odobrenja(platitelja) kao prvi podatak naloga
+
+0.2.3
+  Dodana podrska za broj odobrenja kod generiranja doprinosa
