@@ -82,12 +82,12 @@ ZbrojniNalogGenerator.new("HR3624840081105230796").tap do |result|
   porez_na_kapitalnu = (BigDecimal.new('0.164958062')*avans_dobiti).round(2) #za Zagreb
 
   if !avans_dobiti.nil? && avans_dobiti > 0
-    result.nalozi << [ "HR99", "Avans dobiti", Doprinosi.get_iban("2484008-55555555555"), "Marko Jurjevac", avans_dobiti ]
-    result.nalozi << [ "HR681910-OIB", "Porez i prirez na kapitalnu dobit", Doprinosi.get_iban("1001005-1713312009"), "POREZ I PRIREZ NA DOHODAK", porez_na_kapitalnu]
+    result.nalozi << [ "HR99", "HR99", "Avans dobiti", Doprinosi.get_iban("2484008-55555555555"), "Marko Jurjevac", avans_dobiti ]
+    result.nalozi << [ "HR99", "HR681910-OIB", "Porez i prirez na kapitalnu dobit", Doprinosi.get_iban("1001005-1713312009"), "POREZ I PRIREZ NA DOHODAK", porez_na_kapitalnu]
   end
 
-  result.nalozi << [ "HR99",'Najam poslovnog prostora', Doprinosi.get_iban("2340009-3555555146"),"Ante Markovic", 5530.0 ]
-  result.nalozi << [ "HR99",'Usluge', Doprinosi.get_iban("2340009-3555555555"),"Marko Markovic", 1000.0 ]
+  result.nalozi << [ "HR99", "HR99",'Najam poslovnog prostora', Doprinosi.get_iban("2340009-3555555146"),"Ante Markovic", 5530.0 ]
+  result.nalozi << [ "HR99", "HR99",'Usluge', Doprinosi.get_iban("2340009-3555555555"),"Marko Markovic", 1000.0 ]
 
   result.export('~/Desktop/doprinosi.hub3')
 end
@@ -138,3 +138,11 @@ Doprinosi na placu - poziv na broj/popravak
 0.2.0
   Novi poziv na broj - isplata redovne place
   HR69 40002-OIB-100
+
+
+0.2.1
+  Novi poziv na broj odobrenja za isplatu place
+  HR67 OIB-JJOPD-0
+
+0.2.3
+  Dodan poziv na broj odobrenja(platitelja) kao prvi podatak naloga

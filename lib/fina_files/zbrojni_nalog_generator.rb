@@ -27,13 +27,13 @@ class ZbrojniNalogGenerator
   end
 
   def row_309(nalog)
-   nalog[2].ljust(34) + nalog[3].ljust(70) + " "*103 + nalog[1].ljust(140) +("%016.2f" % nalog[4]).gsub(".","") + nalog[0].gsub(" ","").ljust(26) + " "*159 + "0" + " "*449 + "309"
+   nalog[3].ljust(34) + nalog[4].ljust(70) + " "*73 + nalog[0].gsub(" ","").ljust(26) + " "*4 +  nalog[2].ljust(140) +("%016.2f" % nalog[5]).gsub(".","") + nalog[1].gsub(" ","").ljust(26) + " "*159 + "0" + " "*449 + "309"
   end
 
   def zbroj_to_s
    raise 'nema naloga' if nalozi.count == 0
    amount = nalozi.map do |nalog|
-      BigDecimal.new(nalog[4].to_s).round(2)
+      BigDecimal.new(nalog[5].to_s).round(2)
     end.reduce(:+)
     ("%021.2f" % amount).gsub(".","")
   end

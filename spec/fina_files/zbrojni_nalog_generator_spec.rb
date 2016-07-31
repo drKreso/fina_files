@@ -1,9 +1,14 @@
 #encoding:utf-8
 require 'fina_files/zbrojni_nalog_generator'
 
+RSpec.configure do |config|
+  config.expect_with(:rspec) { |c| c.syntax = :should }
+end
+
 describe ZbrojniNalogGenerator do
   NALOZI = [
               [
+                "HR99",
                 "HR68 8109-58914703561-1209",
                 "MIO I STUP",
                 "1001005-1863000160",
@@ -11,6 +16,7 @@ describe ZbrojniNalogGenerator do
                 574.6
               ],
               [
+                "HR67 48923563560-16183-0",
                 "HR68 2003-58914703561-1209",
                 "MIO II STUP",
                 "1001005-1700036001",
@@ -40,7 +46,8 @@ describe ZbrojniNalogGenerator do
   it 'stavlja red 309 prvi' do
     subject.datum = DateTime.parse('2012-07-25')
     subject.nalozi = NALOZI
-    subject.rows[2].should == "1001005-1863000160" + " "*16 + "DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE" + " "*35 + " "*103 +
+    subject.rows[2].should == "1001005-1863000160" + " "*16 + "DRŽAVNI PRORAČUN REPUBLIKE HRVATSKE" + " "*35 + " "*73 +
+                              "HR99" + " "*22 + " "*4 +
                                "MIO I STUP" + " "*130 + "000000000057460" + "HR68" +  "8109-58914703561-1209 " + " "*159 + "0" + " "*449 + "309"
     subject.rows[2].length.should ==  1000
   end
@@ -48,7 +55,7 @@ describe ZbrojniNalogGenerator do
   it 'stavlja red 309 drugi' do
     subject.datum = DateTime.parse('2012-07-25')
     subject.nalozi = NALOZI
-    subject.rows[3].should == "1001005-1700036001                DOPRINOS ZA MIROVINSKO OSIGURANJE                                                                                                                                            MIO II STUP                                                                                                                                 000000000019153HR682003-58914703561-1209                                                                                                                                                                0                                                                                                                                                                                                                                                                                                                                                                                                                                                                 309"
+    subject.rows[3].should == "1001005-1700036001                DOPRINOS ZA MIROVINSKO OSIGURANJE                                                                                                              HR6748923563560-16183-0       MIO II STUP                                                                                                                                 000000000019153HR682003-58914703561-1209                                                                                                                                                                0                                                                                                                                                                                                                                                                                                                                                                                                                                                                 309"
 
     subject.rows[3].length.should == 1000
   end
