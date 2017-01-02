@@ -149,3 +149,6 @@ Doprinosi na placu - poziv na broj/popravak
 
 0.2.3
   Dodana podrska za broj odobrenja kod generiranja doprinosa
+
+0.2.4
+  Dodana podrska za isplatu place na sticeni racun
