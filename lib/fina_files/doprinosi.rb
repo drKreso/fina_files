@@ -39,9 +39,9 @@ class Doprinosi
     unless postavke[:place].nil?
       postavke[:place].each do |placa|
         if placa[:sticeni_racun] == true
-          result << ["HR67#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0", "HR69 40002-#{postavke[:oib_platitelja]}-120",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
-        else
           result << ["HR67#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0", "HR69 40002-#{postavke[:oib_platitelja]}-100",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
+        else
+          result << ["HR67#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}-0", "HR69 40002-#{postavke[:oib_platitelja]}-120",'Isplata place',get_iban("#{placa[:racun]}"),"#{placa[:prima]}", placa[:iznos] ]
         end
       end
     end
