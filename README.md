@@ -152,3 +152,6 @@ Doprinosi na placu - poziv na broj/popravak
 
 0.2.4
   Dodana podrska za isplatu place na sticeni racun
+  
+0.2.6
+  Dodana podrska za isplatu doprinosa za Veliku Goricu i Omis

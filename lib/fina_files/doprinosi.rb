@@ -36,6 +36,16 @@ class Doprinosi
       result << ["HR99", "HR68 1880-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}","Porez prirez dohodak #{godina_mjesec}", "HR8710010051707912009", 'Donja Stubica', postavke[:porez_prirez_dohodak_donja_stubica]]
     end
 
+    #broj racuna je za grad Velica Gorica
+    unless postavke[:porez_prirez_dohodak_velika_gorica].nil?
+      result << ["HR99", "HR68 1880-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}","Porez prirez dohodak #{godina_mjesec}", "HR6210010051754112007", 'Velika Gorica', postavke[:porez_prirez_dohodak_velika_gorica]]
+    end
+
+    #broj racuna je za grad Omis
+    unless postavke[:porez_prirez_dohodak_omis].nil?
+      result << ["HR99", "HR68 1880-#{postavke[:oib_platitelja]}-#{poziv_na_broj_godina_dan}","Porez prirez dohodak #{godina_mjesec}", "HR7610010051730012008", 'Omis', postavke[:porez_prirez_dohodak_omis]]
+    end
+
     unless postavke[:place].nil?
       postavke[:place].each do |placa|
         if placa[:sticeni_racun] == true
